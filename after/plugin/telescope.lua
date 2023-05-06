@@ -7,8 +7,8 @@ vim.keymap.set('n', '<leader>g', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>b', builtin.buffers, {})
 
 -- more searches
-vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
-vim.keymap.set('n', '<leader>ft', builtin.treesitter, {})
+vim.keymap.set('n', '<leader>sg', builtin.find_files, {})
+vim.keymap.set('n', '<leader>st', builtin.treesitter, {})
 
 require('telescope').setup{
 	defaults = {
