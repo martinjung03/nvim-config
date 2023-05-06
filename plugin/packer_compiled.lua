@@ -74,6 +74,29 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ["colorbuddy.nvim"] = {
+    loaded = true,
+    path = "/Users/martinjung/.local/share/nvim/site/pack/packer/start/colorbuddy.nvim",
+    url = "https://github.com/tjdevries/colorbuddy.nvim"
+  },
+  ["lazygit.nvim"] = {
+    commands = { "LazyGit" },
+    loaded = false,
+    needs_bufread = true,
+    only_cond = false,
+    path = "/Users/martinjung/.local/share/nvim/site/pack/packer/opt/lazygit.nvim",
+    url = "https://github.com/kdheepak/lazygit.nvim"
+  },
+  ["neosolarized.nvim"] = {
+    loaded = true,
+    path = "/Users/martinjung/.local/share/nvim/site/pack/packer/start/neosolarized.nvim",
+    url = "https://github.com/svrana/neosolarized.nvim"
+  },
+  ["nvim-treesitter"] = {
+    loaded = true,
+    path = "/Users/martinjung/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
+    url = "https://github.com/nvim-treesitter/nvim-treesitter"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/Users/martinjung/.local/share/nvim/site/pack/packer/start/packer.nvim",
@@ -88,10 +111,37 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/martinjung/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
+  },
+  undotree = {
+    commands = { "UndotreeToggle" },
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "/Users/martinjung/.local/share/nvim/site/pack/packer/opt/undotree",
+    url = "https://github.com/mbbill/undotree"
   }
 }
 
 time([[Defining packer_plugins]], false)
+
+-- Command lazy-loads
+time([[Defining lazy-load commands]], true)
+pcall(vim.api.nvim_create_user_command, 'UndotreeToggle', function(cmdargs)
+          require('packer.load')({'undotree'}, { cmd = 'UndotreeToggle', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
+        end,
+        {nargs = '*', range = true, bang = true, complete = function()
+          require('packer.load')({'undotree'}, {}, _G.packer_plugins)
+          return vim.fn.getcompletion('UndotreeToggle ', 'cmdline')
+      end})
+pcall(vim.api.nvim_create_user_command, 'LazyGit', function(cmdargs)
+          require('packer.load')({'lazygit.nvim'}, { cmd = 'LazyGit', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
+        end,
+        {nargs = '*', range = true, bang = true, complete = function()
+          require('packer.load')({'lazygit.nvim'}, {}, _G.packer_plugins)
+          return vim.fn.getcompletion('LazyGit ', 'cmdline')
+      end})
+time([[Defining lazy-load commands]], false)
+
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then
