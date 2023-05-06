@@ -20,7 +20,7 @@ vim.opt.incsearch = true
 
 vim.opt.background = "dark"
 vim.opt.termguicolors = true
-vim.cmd [[colorscheme neosolarized]]
+vim.cmd.colorscheme('neosolarized')
 
 vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"

@@ -2,7 +2,7 @@ vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>e", vim.cmd.Ex)
 
 -- my save
-vim.keymap.set("n", "<leader>s", vim.cmd.write)
+vim.keymap.set("n", "<leader>w", vim.cmd.write)
 
 -- my quit
 vim.keymap.set("n", "<leader>q", vim.cmd.q)
