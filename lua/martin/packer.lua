@@ -7,6 +7,9 @@ return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
+  -- better escape
+  use 'max397574/better-escape.nvim'
+
   -- search, find, navigate things
   use {
   'nvim-telescope/telescope.nvim', tag = '0.1.1',
@@ -31,4 +34,26 @@ return require('packer').startup(function(use)
   -- git
   -- lazy load when the command executes
   use { 'kdheepak/lazygit.nvim', opt = true, cmd = 'LazyGit' }
+
+  -- LSP !
+  use {
+    'VonHeikemen/lsp-zero.nvim',
+    branch = 'v2.x',
+    requires = {
+      -- LSP Support
+      {'neovim/nvim-lspconfig'},             -- Required
+      {                                      -- Optional
+        'williamboman/mason.nvim',
+        run = function()
+          pcall(vim.cmd, 'MasonUpdate')
+        end,
+      },
+      {'williamboman/mason-lspconfig.nvim'}, -- Optional
+  
+      -- Autocompletion
+      {'hrsh7th/nvim-cmp'},     -- Required
+      {'hrsh7th/cmp-nvim-lsp'}, -- Required
+      {'L3MON4D3/LuaSnip'},     -- Required
+    }
+  }
 end)
