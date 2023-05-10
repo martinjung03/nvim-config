@@ -18,3 +18,5 @@ vim.keymap.set("n", "<C-b>p", vim.cmd.bprevious)
 -- git
 vim.keymap.set("n", "<leader>gl", vim.cmd.LazyGit)
 
+-- Select all
+vim.keymap.set('n', '<C-a>', 'gg<S-v>G')
