@@ -42,6 +42,9 @@ lsp.ensure_installed({
   'lua_ls',
   'rust_analyzer',
   'pylsp',
+  'emmet_ls',
+  'cssls',
+  'jsonls',
 })
 
 -- (Optional) Configure lua language server for neovim
