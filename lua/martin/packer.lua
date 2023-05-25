@@ -22,6 +22,9 @@ return require('packer').startup(function(use)
     requires = { { 'tjdevries/colorbuddy.nvim' } }
   }
 
+  -- tokyonight color scheme
+  use { "folke/tokyonight.nvim" }
+
   use {
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate'
