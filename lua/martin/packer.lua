@@ -25,6 +25,9 @@ return require('packer').startup(function(use)
   -- tokyonight color scheme
   use { "folke/tokyonight.nvim" }
 
+  -- seoul color scheme
+  use { "junegunn/seoul256.vim" }
+
   use {
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate'

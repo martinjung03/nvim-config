@@ -22,6 +22,8 @@ vim.opt.background = "dark"
 vim.opt.termguicolors = true
 -- vim.cmd.colorscheme('neosolarized')
 vim.cmd.colorscheme('tokyonight')
+-- vim.api.nvim_set_var('seoul256_background', 235)
+-- vim.cmd.colorscheme('seoul256')
 
 vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
