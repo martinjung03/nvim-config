@@ -32,9 +32,18 @@ set(mode, '<c-i>', M.expand_or_jump)
 set(mode, '<c-n>', M.jump_prev)
 set(mode, '<c-l>', M.change_choice)
 
+-- vscode like snippet
+require("luasnip.loaders.from_vscode").lazy_load()
+
 -- custom snippet
 local s = ls.snippet
 local t = ls.text_node
 ls.add_snippets("all", {
   s("hh", t("hello martin")),
+})
+
+ls.add_snippets("go", {
+  s("imen", {
+    t("hello martin"),
+  }),
 })

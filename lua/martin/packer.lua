@@ -58,6 +58,10 @@ return require('packer').startup(function(use)
     }
   }
 
+  -- snippet
+  use { "rafamadriz/friendly-snippets" }
+  --  use { "mattn/emmet-vim" }
+
   -- null ls
   use({
     "jose-elias-alvarez/null-ls.nvim",

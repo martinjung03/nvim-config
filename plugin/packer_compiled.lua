@@ -94,6 +94,11 @@ _G.packer_plugins = {
     path = "/Users/martinjung/.local/share/nvim/site/pack/packer/start/colorbuddy.nvim",
     url = "https://github.com/tjdevries/colorbuddy.nvim"
   },
+  ["friendly-snippets"] = {
+    loaded = true,
+    path = "/Users/martinjung/.local/share/nvim/site/pack/packer/start/friendly-snippets",
+    url = "https://github.com/rafamadriz/friendly-snippets"
+  },
   ["lazygit.nvim"] = {
     commands = { "LazyGit" },
     loaded = false,
